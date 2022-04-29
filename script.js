@@ -1,4 +1,4 @@
-var tokens = ["print"];
+var tokens = ["print", "var"];
 var codeEditor = "<textarea name='editor' class='editor' id='editor' >"
 var spriteEditor = '<div class="spr">  <input type="file" id="photo" name="photo" accept="image/*">  <img src="" id="img"><button id="add">Add</button></div></div>'
 var code = "print \"Hello World\"";
@@ -61,6 +61,10 @@ var rands = ['print "Hello there (woo woo)"', 'print "Wazzup Beijing"', 'print "
                     awaitingArgs = true;
                     argsExpected = 0;
                     argsFor = what[token];
+                } elif(what[token] == "var") {
+                    awaitingArgs = true;
+                    argsExpected = 0;
+                    argsFor = what[token];
                 } else {
                         if(awaitingArgs == true) {
                             args.push(what[token]);
@@ -79,6 +83,9 @@ var rands = ['print "Hello there (woo woo)"', 'print "Wazzup Beijing"', 'print "
                 }
             }
         }
+        function userVariables() {
+        }  
+
         document.getElementById("runner").onclick = function() {
             var input = document.getElementById("editor").value;
             var tokens = lex(input);
