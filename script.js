@@ -4,6 +4,13 @@ var spriteEditor = '<div class="spr">  <input type="file" id="photo" name="photo
 var code = "print \"Hello World\"";
 var current = "code"
 var rands = ['print "Hello there (woo woo)"', 'print "Wazzup Beijing"', 'print "Me When Shrek"'];
+var userVar = [];        
+        function userVariables() {
+            var input = document.getElementById("editor").value;    
+            console.log(input.search("var"))
+            
+        }
+        
         function lex(what) {
             var cc = "";
             var full = "";
@@ -83,8 +90,6 @@ var rands = ['print "Hello there (woo woo)"', 'print "Wazzup Beijing"', 'print "
                 }
             }
         }
-        function userVariables() {
-        }  
 
         document.getElementById("runner").onclick = function() {
             var input = document.getElementById("editor").value;
