@@ -7,8 +7,9 @@ var rands = ['print "Hello there (woo woo)"', 'print "Wazzup Beijing"', 'print "
 var userVar = [];        
         function userVariables() {
             var input = document.getElementById("editor").value;    
-            console.log(input.search("var"))
-            
+            var foundVars = input.search("var")
+            console.log(foundVars)
+            document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + foundVars + "<br>";
         }
         
         function lex(what) {
